@@ -37,6 +37,7 @@ radius = 79.40403
 size = Vector2(503, 73)
 
 [node name="game" type="Node2D" unique_id=1304326306]
+scale = Vector2(0.25, 0.25)
 script = ExtResource("1_80nbo")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=638819409]

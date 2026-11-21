@@ -5,7 +5,7 @@ extends CharacterBody2D
 func _physics_process(delta: float) -> void:
 	velocity.y += 30
 	if is_on_floor():
-		velocity.y = -1000
+		velocity.y = -500
 		ball.play("default")
 		
 	move_and_slide()

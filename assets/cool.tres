@@ -30,15 +30,15 @@ scene = ExtResource("4_t6ieh")
 script = ExtResource("2_0tbnt")
 scene = ExtResource("5_4vtc4")
 overrides = {
-"box_size": "Vector2(800, 259.9)",
+"box_size": "Vector2(200, 64.975)",
 "custom_normal_font": "\"res://assets/augiepixel.ttf\"",
 "name_label_color_mode": "2",
 "name_label_custom_color": "Color(0.31835938, 1, 0.75237274, 1)",
-"name_label_custom_size": "50.0",
+"name_label_custom_size": "12.5",
 "name_label_customfont": "\"res://assets/augiepixel.ttf\"",
 "name_label_use_global_size": "false",
 "portrait_stretch_factor": "0.45",
-"text_custom_size": "40.0",
+"text_custom_size": "10.0",
 "text_use_global_size": "false"
 }
 
@@ -50,7 +50,7 @@ scene = ExtResource("6_54jjs")
 script = ExtResource("2_0tbnt")
 scene = ExtResource("7_mr5jw")
 overrides = {
-"font_size_custom": "40.0",
+"font_size_custom": "10.0",
 "font_size_use_global": "false"
 }
 

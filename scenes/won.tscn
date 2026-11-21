@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://c2v7cyyifpofk"]
+
+[ext_resource type="Script" uid="uid://cwo128k835k8a" path="res://scripts/won.gd" id="1_4pchp"]
+[ext_resource type="FontFile" uid="uid://bnartvo602m3b" path="res://assets/player/anims/bounce/augiepixel.ttf" id="1_ix7v3"]
+
+[node name="won" type="Control" unique_id=1594196306]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4pchp")
+
+[node name="Label" type="Label" parent="." unique_id=735039260]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 73.0
+offset_right = 326.0
+offset_bottom = 130.0
+theme_override_fonts/font = ExtResource("1_ix7v3")
+theme_override_font_sizes/font_size = 58
+text = "YOU WON"
+
+[node name="Retry" type="Button" parent="." unique_id=605752501]
+layout_mode = 0
+offset_left = 179.0
+offset_top = 134.0
+offset_right = 229.0
+offset_bottom = 165.0
+theme_override_fonts/font = ExtResource("1_ix7v3")
+text = "Retry"
+
+[node name="Menu" type="Button" parent="." unique_id=828187230]
+layout_mode = 0
+offset_left = 234.0
+offset_top = 134.0
+offset_right = 287.0
+offset_bottom = 165.0
+theme_override_fonts/font = ExtResource("1_ix7v3")
+text = "Menu"
+
+[connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]

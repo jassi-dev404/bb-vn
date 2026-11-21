@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://4ljlqgenxwd6"]
+
+[ext_resource type="Script" uid="uid://ch6u67r44svwj" path="res://scenes/menu.gd" id="1_md4h7"]
+[ext_resource type="FontFile" uid="uid://bnartvo602m3b" path="res://assets/player/anims/bounce/augiepixel.ttf" id="1_pxi7o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_asjhf"]
+bg_color = Color(0.16924527, 0.16924533, 0.16924518, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kp66l"]
+bg_color = Color(0.09803922, 0.09803922, 0.09803922, 1)
+
+[node name="Control" type="Control" unique_id=1660705453]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_md4h7")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=66880378]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 213.0
+offset_right = 329.0
+offset_bottom = 253.0
+color = Color(0.19793725, 0.19793722, 0.19793722, 1)
+
+[node name="defend" type="Button" parent="." unique_id=579545097]
+layout_mode = 0
+offset_left = 244.0
+offset_top = 218.0
+offset_right = 302.0
+offset_bottom = 249.0
+scale = Vector2(1.12, 1)
+theme_override_fonts/font = ExtResource("1_pxi7o")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_asjhf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kp66l")
+text = "Defend"
+
+[node name="attack" type="Button" parent="." unique_id=68623567]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 218.0
+offset_right = 235.0
+offset_bottom = 249.0
+scale = Vector2(1.12, 1)
+theme_override_fonts/font = ExtResource("1_pxi7o")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_asjhf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kp66l")
+text = "Attack"
+
+[node name="Label" type="Label" parent="." unique_id=843692517]
+layout_mode = 0
+offset_left = 179.0
+offset_top = 204.0
+offset_right = 286.0
+offset_bottom = 225.0
+theme_override_font_sizes/font_size = 6
+text = "This feature is 
+Under Development ;)"
+
+[connection signal="pressed" from="defend" to="." method="_on_defend_pressed"]
+[connection signal="pressed" from="attack" to="." method="_on_attack_pressed"]

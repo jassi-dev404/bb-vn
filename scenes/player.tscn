@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dxlifh0xrua3y"]
+
+[ext_resource type="Texture2D" uid="uid://cdauxcurgpmqq" path="res://assets/player/anims/bounce/1.png" id="1_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://cxwbe6tgpl60l" path="res://assets/player/anims/bounce/2.png" id="2_dqkch"]
+[ext_resource type="Texture2D" uid="uid://dvl1amtbr7nby" path="res://assets/player/anims/bounce/6.png" id="2_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://2kf5asu2c7e1" path="res://assets/player/anims/bounce/4.png" id="4_smehm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v15d6"]
+animations = [{
+"frames": [{
+"duration": 0.2,
+"texture": ExtResource("2_dqkch")
+}, {
+"duration": 0.2,
+"texture": ExtResource("4_smehm")
+}, {
+"duration": 0.2,
+"texture": ExtResource("2_qhqgy")
+}, {
+"duration": 0.2,
+"texture": ExtResource("2_dqkch")
+}],
+"loop": 0,
+"name": &"bounce",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.1,
+"texture": ExtResource("1_qlg0r")
+}],
+"loop": 0,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y4r1p"]
+radius = 36.0
+
+[node name="ball" type="CharacterBody2D" unique_id=887462116]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=739486181]
+texture_filter = 1
+texture_repeat = 1
+sprite_frames = SubResource("SpriteFrames_v15d6")
+animation = &"bounce"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D" unique_id=1365498812]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2042961572]
+position = Vector2(3, -2)
+shape = SubResource("CircleShape2D_y4r1p")

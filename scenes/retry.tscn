@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://ck6t6i4ru2mc5"]
+
+[ext_resource type="Script" uid="uid://comu4thwd65g8" path="res://scripts/retry.gd" id="1_dc135"]
+
+[node name="retry" type="Control" unique_id=224702625]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dc135")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1771659672]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 479.0
+offset_bottom = 270.0
+color = Color(0, 0, 0, 0.47843137)
+
+[node name="Label" type="Label" parent="." unique_id=512161839]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 87.0
+offset_right = 270.0
+offset_bottom = 115.0
+theme_override_font_sizes/font_size = 20
+text = "Retry?"
+
+[node name="yes" type="Button" parent="." unique_id=330138827]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 121.0
+offset_right = 269.0
+offset_bottom = 152.0
+text = "Yes"
+
+[connection signal="pressed" from="yes" to="." method="_on_yes_pressed"]
