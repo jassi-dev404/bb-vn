@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://c88vjb4or52df" path="res://button.gd" id="2_7vrkn"]
 [ext_resource type="AudioStream" uid="uid://cy4qmmphopmaa" path="res://assets/main.wav" id="4_glbon"]
 [ext_resource type="Script" uid="uid://5k7bss1xd4g6" path="res://cool.gd" id="4_jix8l"]
+[ext_resource type="Texture2D" uid="uid://wbdicg8o6jtv" path="res://assets/main_screen.jpg" id="6_nlkkf"]
 
 [node name="MainMenu" type="Control" unique_id=1948028105]
 layout_mode = 3
@@ -15,6 +16,11 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 0.9199997)
 script = ExtResource("1_jix8l")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1723107790]
+position = Vector2(965.60156, 578.2937)
+scale = Vector2(1.5056274, 1.5056275)
+texture = ExtResource("6_nlkkf")
 
 [node name="Button" type="Button" parent="." unique_id=530886646]
 layout_mode = 1
@@ -41,5 +47,47 @@ script = ExtResource("2_7vrkn")
 stream = ExtResource("4_glbon")
 autoplay = true
 script = ExtResource("4_jix8l")
+
+[node name="Label2" type="Label" parent="." unique_id=567069575]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 35.869812
+offset_right = 1327.0
+offset_bottom = 179.86981
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_06t4h")
+theme_override_font_sizes/font_size = 150
+text = "bouncing back to life"
+
+[node name="Label" type="Label" parent="." unique_id=1729708185]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 35.869576
+offset_right = 1311.0
+offset_bottom = 179.86957
+theme_override_fonts/font = ExtResource("1_06t4h")
+theme_override_font_sizes/font_size = 150
+text = "bouncing back to life"
+
+[node name="Label3" type="Label" parent="." unique_id=1393661844]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 218.47858
+offset_right = 1327.0
+offset_bottom = 362.4786
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_06t4h")
+theme_override_font_sizes/font_size = 150
+text = "(DEMO UNFINISHED)"
+
+[node name="Label4" type="Label" parent="." unique_id=462213467]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 218.47835
+offset_right = 1311.0
+offset_bottom = 362.47836
+theme_override_fonts/font = ExtResource("1_06t4h")
+theme_override_font_sizes/font_size = 150
+text = "(DEMO UNFINISHED)"
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

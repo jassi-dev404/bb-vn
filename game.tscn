@@ -2,6 +2,39 @@
 
 [ext_resource type="Script" uid="uid://deypa1yt3n2hy" path="res://game.gd" id="1_80nbo"]
 [ext_resource type="Texture2D" uid="uid://bvt47lph4tdpc" path="res://assets/Untitled7_20261121211207.PNG" id="2_e2o6t"]
+[ext_resource type="Script" uid="uid://baykgh3mfhuqa" path="res://ball.gd" id="3_fc0e3"]
+[ext_resource type="AudioStream" uid="uid://jv8sxvldwm0q" path="res://assets/tutorial.mp3" id="3_feb5d"]
+[ext_resource type="Texture2D" uid="uid://ixvfhrk85503" path="res://assets/1.png" id="3_hve3p"]
+[ext_resource type="Script" uid="uid://ditebccg4lfwf" path="res://character_body_2d.gd" id="4_iotsf"]
+[ext_resource type="Texture2D" uid="uid://dkuggnxuhbqd3" path="res://assets/4.png" id="6_lc2xo"]
+[ext_resource type="Texture2D" uid="uid://gah266s3ok73" path="res://assets/5.png" id="7_215e1"]
+[ext_resource type="Texture2D" uid="uid://bxoyw8opmqhl2" path="res://assets/6.png" id="8_7sc4i"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_feb5d"]
+animations = [{
+"frames": [{
+"duration": 0.9,
+"texture": ExtResource("6_lc2xo")
+}, {
+"duration": 0.9,
+"texture": ExtResource("7_215e1")
+}, {
+"duration": 0.9,
+"texture": ExtResource("8_7sc4i")
+}, {
+"duration": 0.9,
+"texture": ExtResource("3_hve3p")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 11.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lc2xo"]
+radius = 79.40403
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_acsm4"]
+size = Vector2(503, 73)
 
 [node name="game" type="Node2D" unique_id=1304326306]
 script = ExtResource("1_80nbo")
@@ -10,3 +43,45 @@ script = ExtResource("1_80nbo")
 position = Vector2(961.50006, 553.50006)
 scale = Vector2(0.8165254, 0.6823171)
 texture = ExtResource("2_e2o6t")
+
+[node name="ColorRect" type="ColorRect" parent="Sprite2D" unique_id=768223058]
+unique_name_in_owner = true
+offset_left = 555.4022
+offset_top = -688.0966
+offset_right = 998.74426
+offset_bottom = 179.93951
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Sprite2D" unique_id=749645953]
+unique_name_in_owner = true
+offset_left = 576.22205
+offset_top = -663.1815
+offset_right = 976.7001
+offset_bottom = 160.04443
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=367113709]
+position = Vector2(0, 2)
+stream = ExtResource("3_feb5d")
+volume_db = 8.262
+autoplay = true
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1189199275]
+script = ExtResource("4_iotsf")
+
+[node name="ball" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=750705948]
+position = Vector2(1596, 530)
+scale = Vector2(2.2291667, 1.9010416)
+sprite_frames = SubResource("SpriteFrames_feb5d")
+frame = 3
+frame_progress = 1.0
+script = ExtResource("3_fc0e3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=2049155939]
+position = Vector2(1603, 513)
+shape = SubResource("CircleShape2D_lc2xo")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1433871214]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=310131534]
+position = Vector2(1604, 630)
+shape = SubResource("RectangleShape2D_acsm4")
