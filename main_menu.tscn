@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://dlt803rqq61r1"]
 
 [ext_resource type="FontFile" uid="uid://dw3bwaurde6qs" path="res://assets/augiepixel.ttf" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://cjpun1ckqtkjr" path="res://main_menu.gd" id="1_jix8l"]
+[ext_resource type="Script" uid="uid://c88vjb4or52df" path="res://button.gd" id="2_7vrkn"]
+[ext_resource type="AudioStream" uid="uid://cy4qmmphopmaa" path="res://assets/main.wav" id="4_glbon"]
+[ext_resource type="Script" uid="uid://5k7bss1xd4g6" path="res://cool.gd" id="4_jix8l"]
 
 [node name="MainMenu" type="Control" unique_id=1948028105]
 layout_mode = 3
@@ -10,6 +14,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 0.9199997)
+script = ExtResource("1_jix8l")
 
 [node name="Button" type="Button" parent="." unique_id=530886646]
 layout_mode = 1
@@ -20,11 +25,21 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 368.0
 offset_top = 410.5221
-offset_right = 451.3562
-offset_bottom = 437.5221
+offset_right = 912.2313
+offset_bottom = 593.8015
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(6.7301636, 6.875539)
+rotation = 6.2831855
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_06t4h")
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 170
 text = "start"
+script = ExtResource("2_7vrkn")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=969538019]
+stream = ExtResource("4_glbon")
+autoplay = true
+script = ExtResource("4_jix8l")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
