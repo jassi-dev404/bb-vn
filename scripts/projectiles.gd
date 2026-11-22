@@ -22,8 +22,10 @@ func _process(delta: float) -> void:
 		_timer = fire_interval
 
 func start_loop() -> void:
+	if active:
+		return
 	active = true
-	_timer = 0.0 # Fires right away when defend is pressed
+	_timer = 0.0
 
 func stop_loop() -> void:
 	active = false
