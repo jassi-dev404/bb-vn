@@ -22,5 +22,5 @@ func _process(delta: float) -> void:
 		scale = scale.lerp(Vector2.ONE, duration)
 		
 func _on_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/main.tscn")
+	get_tree().change_scene_to_file("res://game.tscn")
 	pass 
