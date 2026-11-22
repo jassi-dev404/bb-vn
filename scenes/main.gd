@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 		survive_timer.start()
 	
 	if survive.text == '0':
-		get_tree().change_scene_to_file("res://scenes/retry.tscn")
+		get_tree().change_scene_to_file("res://scenes/won.tscn")
 
 func _on_survive_timer_timeout() -> void:
 	if survive.text != '0':
