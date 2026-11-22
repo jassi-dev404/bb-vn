@@ -7,13 +7,73 @@
 [ext_resource type="FontFile" uid="uid://bnartvo602m3b" path="res://assets/player/anims/bounce/augiepixel.ttf" id="3_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://4ljlqgenxwd6" path="res://scenes/combat_ui.tscn" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://25j4fjdto4ms" path="res://scripts/projectiles.gd" id="5_85g3d"]
-[ext_resource type="AudioStream" uid="uid://blntrp8hvngmw" path="res://assets/demo_fight.wav" id="8_tipki"]
+[ext_resource type="AudioStream" uid="uid://cj6y123qhhb7o" path="res://assets/flower man but it's just my voice.mp3" id="8_jbj1t"]
+[ext_resource type="PackedScene" uid="uid://b023d217eakuk" path="res://scenes/attack_overlay.tscn" id="9_85g3d"]
+[ext_resource type="PackedScene" uid="uid://i16ymtfm1m48" path="res://scenes/att.tscn" id="10_choun"]
+[ext_resource type="Texture2D" uid="uid://cliwg0fmkgxt7" path="res://anims/1.png" id="11_jbj1t"]
+[ext_resource type="Texture2D" uid="uid://dbt2tj65n02sr" path="res://anims/2.png" id="12_muem4"]
+[ext_resource type="Texture2D" uid="uid://u0ff8mfr3leu" path="res://anims/3.png" id="13_dp3eg"]
+[ext_resource type="Texture2D" uid="uid://dbelhjc7lis3n" path="res://anims/4.png" id="14_0ld40"]
+[ext_resource type="Texture2D" uid="uid://b10ufou0fa2o2" path="res://anims/5.png" id="15_gqmmt"]
+[ext_resource type="Texture2D" uid="uid://ny5od3dg0kln" path="res://anims/6.png" id="16_yc10j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v15d6"]
 size = Vector2(23.64889, 0.7860203)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rm1bd"]
 size = Vector2(162, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v15d6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_jbj1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_muem4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_dp3eg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_0ld40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_gqmmt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_yc10j")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rm1bd"]
+animations = [{
+"frames": [{
+"duration": 0.4,
+"texture": ExtResource("11_jbj1t")
+}, {
+"duration": 0.4,
+"texture": ExtResource("12_muem4")
+}, {
+"duration": 0.2,
+"texture": ExtResource("13_dp3eg")
+}, {
+"duration": 0.2,
+"texture": ExtResource("14_0ld40")
+}, {
+"duration": 0.2,
+"texture": ExtResource("15_gqmmt")
+}, {
+"duration": 0.2,
+"texture": ExtResource("16_yc10j")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="main" type="Node2D" unique_id=1122760083]
 script = ExtResource("1_o6xl0")
@@ -136,12 +196,36 @@ process_callback = 0
 wait_time = 10.0
 
 [node name="boss_health" type="Label" parent="hud" unique_id=950072772]
-offset_left = 390.0
-offset_top = 181.0
-offset_right = 430.0
-offset_bottom = 204.0
+offset_left = 360.0
+offset_top = 36.0
+offset_right = 400.0
+offset_bottom = 59.0
 theme_override_fonts/font = ExtResource("3_tbgi4")
-text = "100"
+text = "125"
+
+[node name="boss_health2" type="Label" parent="hud" unique_id=1459755814]
+offset_left = 274.0
+offset_top = 36.0
+offset_right = 356.0
+offset_bottom = 59.0
+theme_override_fonts/font = ExtResource("3_tbgi4")
+text = "Boss Health:"
+
+[node name="player_health" type="Label" parent="hud" unique_id=1955477002]
+offset_left = 117.0
+offset_top = 53.0
+offset_right = 157.0
+offset_bottom = 76.0
+theme_override_fonts/font = ExtResource("3_tbgi4")
+text = "125"
+
+[node name="player_health2" type="Label" parent="hud" unique_id=1274875021]
+offset_left = 15.0
+offset_top = 53.0
+offset_right = 116.0
+offset_bottom = 76.0
+theme_override_fonts/font = ExtResource("3_tbgi4")
+text = "Player Health: "
 
 [node name="projectiles" type="Node2D" parent="." unique_id=1254095576]
 script = ExtResource("5_85g3d")
@@ -156,41 +240,34 @@ position = Vector2(303, 134)
 position = Vector2(303, 175)
 
 [node name="boss" parent="." unique_id=354800316 instance=ExtResource("3_sugp2")]
-position = Vector2(405.00003, 126)
-scale = Vector2(2.775, 2.775)
+position = Vector2(231.00002, 80)
+scale = Vector2(0.305, 0.305)
 
 [node name="Control" parent="." unique_id=1660705453 instance=ExtResource("4_jyhfs")]
 
-[node name="survive_timer" type="Timer" parent="." unique_id=142903460]
-process_callback = 0
-
-[node name="survive_timer_end" type="Timer" parent="." unique_id=832690441]
-process_callback = 0
-wait_time = 60.0
-
-[node name="survive" type="Label" parent="." unique_id=969553818]
-offset_left = 219.0
-offset_top = 27.0
-offset_right = 276.0
-offset_bottom = 50.0
-theme_override_fonts/font = ExtResource("3_tbgi4")
-text = "60"
-
-[node name="survive_label" type="Label" parent="." unique_id=2082748159]
-offset_left = 162.0
-offset_top = 8.0
-offset_right = 308.0
-offset_bottom = 31.0
-theme_override_fonts/font = ExtResource("3_tbgi4")
-text = "Survive 60 seconds"
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1122175196]
-stream = ExtResource("8_tipki")
+stream = ExtResource("8_jbj1t")
 autoplay = true
 
+[node name="attack_overlay" parent="." unique_id=195977241 instance=ExtResource("9_85g3d")]
+visible = false
+position = Vector2(241, 134)
+
+[node name="att" parent="." unique_id=1490128810 instance=ExtResource("10_choun")]
+visible = false
+position = Vector2(-17, 218)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1588771985]
+position = Vector2(815, 141)
+sprite_frames = SubResource("SpriteFrames_v15d6")
+
+[node name="boss_damage_anim" type="AnimatedSprite2D" parent="." unique_id=965957384]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(201, 47.999996)
+scale = Vector2(0.52, 0.52)
+sprite_frames = SubResource("SpriteFrames_rm1bd")
+
 [connection signal="body_entered" from="Node2D/bg/Area2D" to="ball" method="_on_area_2d_body_entered"]
-[connection signal="timeout" from="hud/cooldown_timer" to="ball" method="_on_timer_timeout"]
 [connection signal="timeout" from="hud/cooldown_timer" to="ball" method="_on_cooldown_timer_timeout"]
 [connection signal="timeout" from="hud/cooldown_end" to="ball" method="_on_cooldown_end_timeout"]
-[connection signal="timeout" from="survive_timer" to="." method="_on_survive_timer_timeout"]
-[connection signal="timeout" from="survive_timer_end" to="." method="_on_survive_timer_end_timeout"]

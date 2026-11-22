@@ -33,7 +33,7 @@ overrides = {
 "box_size": "Vector2(200, 64.975)",
 "custom_normal_font": "\"res://assets/augiepixel.ttf\"",
 "name_label_color_mode": "2",
-"name_label_custom_color": "Color(0.31835938, 1, 0.75237274, 1)",
+"name_label_custom_color": "Color(0, 1, 0.49609375, 1)",
 "name_label_custom_size": "12.5",
 "name_label_customfont": "\"res://assets/augiepixel.ttf\"",
 "name_label_use_global_size": "false",
@@ -76,4 +76,4 @@ layer_info = {
 "15": SubResource("Resource_jjwph"),
 "16": SubResource("Resource_qoeug")
 }
-metadata/_latest_layer = "14"
+metadata/_latest_layer = "12"

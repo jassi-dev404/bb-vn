@@ -9,7 +9,9 @@ func _ready() -> void:
 
 
 func _on_dialogic_signal(argument: String) -> void:
-	if argument == "start_combat":
+	if argument == "start_story":
+		get_tree().change_scene_to_file("res://scenes/at_death_bed.tscn")
+	elif argument == "start_combat":
 		get_tree().change_scene_to_file("res://scenes/main.tscn")
 
 

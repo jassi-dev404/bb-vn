@@ -56,15 +56,5 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_asjhf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_kp66l")
 text = "Attack"
 
-[node name="Label" type="Label" parent="." unique_id=843692517]
-layout_mode = 0
-offset_left = 179.0
-offset_top = 204.0
-offset_right = 286.0
-offset_bottom = 225.0
-theme_override_font_sizes/font_size = 6
-text = "This feature is 
-Under Development ;)"
-
 [connection signal="pressed" from="defend" to="." method="_on_defend_pressed"]
 [connection signal="pressed" from="attack" to="." method="_on_attack_pressed"]

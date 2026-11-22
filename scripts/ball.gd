@@ -5,6 +5,8 @@ extends CharacterBody2D
 @onready var cooldown_timer: Timer = $"../hud/cooldown_timer"
 @onready var cooldown_end: Timer = $"../hud/cooldown_end"
 @onready var anim_player: AnimatedSprite2D = $AnimatedSprite2D
+@onready var att: CharacterBody2D = $"../att"
+@onready var boss: CharacterBody2D = $"../boss"
 
 var speed = 50
 var has_jumped = false
@@ -12,6 +14,7 @@ var jump2 = false
 func _ready():
 	cooldown.hide()
 	cooldown_counter.hide()
+	add_collision_exception_with(boss)
 	
 func _process(delta: float) -> void:
 	

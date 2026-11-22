@@ -2,7 +2,7 @@ extends Node2D
 
 const PROJECTILE: PackedScene = preload("uid://budxar11doehq")
 
-@export var fire_interval: float = 2
+@export var fire_interval: float = 1.5
 
 @onready var _markers: Array[Marker2D] = [$top, $mid, $bottom]
 

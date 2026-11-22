@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://i16ymtfm1m48"]
+
+[ext_resource type="Script" uid="uid://khcpbear7pmg" path="res://scenes/att.gd" id="1_63mlc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v15d6"]
+size = Vector2(5, 102)
+
+[node name="att" type="CharacterBody2D" unique_id=1490128810]
+script = ExtResource("1_63mlc")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=577411543]
+offset_left = -3.0
+offset_top = -51.0
+offset_right = 2.0
+offset_bottom = 51.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=407119928]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_v15d6")

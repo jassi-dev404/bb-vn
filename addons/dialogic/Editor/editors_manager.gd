@@ -213,10 +213,23 @@ func _on_resource_unsaved(_editor:DialogicEditor):
 ## Tries opening the last resource
 func load_saved_state() -> void:
 	var current_resources: Dictionary = DialogicUtil.get_editor_setting("current_resources", {})
+	var last_timeline: String = DialogicUtil.get_editor_setting("current_timeline_path", "")
+	if not ResourceLoader.exists(last_timeline):
+		var timelines: Array = DialogicResourceUtil.get_timeline_directory().values()
+		last_timeline = timelines[0] if not timelines.is_empty() else ""
+	var has_timeline := false
 	for editor in current_resources.keys():
-		editors[editor]["node"]._open_resource(load(current_resources[editor]))
+		if String(editor) == "Timeline" and ResourceLoader.exists(current_resources[editor]):
+			has_timeline = true
+	if not has_timeline and ResourceLoader.exists(last_timeline):
+		current_resources["Timeline"] = last_timeline
+	for editor in current_resources.keys():
+		if editor in editors and ResourceLoader.exists(current_resources[editor]):
+			editors[editor]["node"]._open_resource(load(current_resources[editor]))
 
 	var loaded_current_editor: String = DialogicUtil.get_editor_setting("current_editor", "HomePage")
+	if not (loaded_current_editor in editors):
+		loaded_current_editor = "HomePage"
 	open_editor(editors[loaded_current_editor]["node"])
 
 

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="bb_VN"
-run/main_scene="uid://clmyd0bbiwmo0"
+run/main_scene="uid://dlt803rqq61r1"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 
 [autoload]
@@ -21,17 +21,24 @@ Dialogic="*uid://ds2q0uclmolvu"
 [dialogic]
 
 directories/dch_directory={
+"Resources/unit_test_character": "res://bbv/Tests/Resources/unit_test_character.dch",
 "aryan_tutorial": "res://characters/aryan_tutorial.dch",
+"characters/aryan_tutorial": "res://bbv/characters/aryan_tutorial.dch",
+"father": "res://characters/father.dch",
+"mother": "res://characters/mother.dch",
 "unit_test_character": "res://Tests/Resources/unit_test_character.dch"
 }
 directories/dtl_directory={
-"opening": "res://timelines/opening.dtl"
+"opening": "res://timelines/opening.dtl",
+"story": "res://timelines/story.dtl",
+"timelines/opening": "res://bbv/timelines/opening.dtl"
 }
 layout/style_directory={
 "": "res://assets/cool.tres",
-"cool": "res://assets/cool.tres"
+"cool": "res://assets/cool.tres",
+"un_cool": "res://assets/un_cool.tres"
 }
-layout/style_list=["res://assets/cool.tres"]
+layout/style_list=["res://assets/cool.tres", "res://assets/un_cool.tres"]
 layout/default_style="res://assets/cool.tres"
 variables={}
 text/letter_speed=0.01

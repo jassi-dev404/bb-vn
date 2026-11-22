@@ -1,26 +1,24 @@
 extends Node2D
 
 @onready var boss_health: Label = $hud/boss_health
-@onready var survive: Label = $survive
-@onready var survive_timer: Timer = $survive_timer
-@onready var survive_timer_end: Timer = $survive_timer_end
+@onready var player_health: Label = $hud/player_health
 @onready var box: StaticBody2D = $Node2D/bg/box
+@onready var boss: CharacterBody2D = $boss
+@onready var boss_damage_anim: AnimatedSprite2D = $boss_damage_anim
 
 func _ready() -> void:
 	pass
-
+	boss_damage_anim.visible = false
 func _process(delta: float) -> void:
-	if boss_health.text == '0':
+	if int(player_health.text) <= 0:
 		get_tree().change_scene_to_file("res://scenes/retry.tscn")
-	if not box.visible:
-		survive_timer.start()
-	
-	if survive.text == '0':
+		return
+	if int(boss_health.text) <= 0:
 		get_tree().change_scene_to_file("res://scenes/won.tscn")
-
-func _on_survive_timer_timeout() -> void:
-	if survive.text != '0':
-		survive.text = str(int(survive.text) - 1)
-
-func _on_survive_timer_end_timeout() -> void:
-	survive_timer.stop()
+		return
+	if box.visible == true:
+		boss.hide()
+	else:
+		boss.show()
+	
+	

@@ -81,8 +81,10 @@ func load_style(style_name := "", parent: Node = null, is_base_style := true, st
 
 		else:
 			parent = previous_layout.get_parent()
-
-			parent.remove_child(previous_layout)
+			if parent == null:
+				parent = dialogic.get_parent()
+			if parent != null:
+				parent.remove_child(previous_layout)
 			previous_layout.queue_free()
 
 	# if this is another style:

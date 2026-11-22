@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://b023d217eakuk"]
 
 [ext_resource type="Texture2D" uid="uid://bswkbxxo0o8cv" path="res://assets/attack_overlay.png" id="1_be4sp"]
+[ext_resource type="Script" uid="uid://3xwwxta868vc" path="res://scripts/attack_overlay.gd" id="1_hruth"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v15d6"]
 size = Vector2(37, 100)
 
 [node name="attack_overlay" type="Node2D" unique_id=195977241]
+script = ExtResource("1_hruth")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1482354720]
 texture_filter = 1

@@ -1,7 +1,26 @@
 [gd_scene format=3 uid="uid://budxar11doehq"]
 
-[ext_resource type="Texture2D" uid="uid://cdnnouiomlgpc" path="res://assets/projectile/projectile.png" id="1_c8fcr"]
 [ext_resource type="Script" uid="uid://dpcjqg5kbd411" path="res://scripts/projectile.gd" id="1_q3m7n"]
+[ext_resource type="Texture2D" uid="uid://b7fcpny8mhhcy" path="res://assets/projectile_ball.png" id="2_q3m7n"]
+[ext_resource type="Texture2D" uid="uid://cvokqv4e5txop" path="res://assets/projectile/projec2t.png" id="3_6q2a6"]
+[ext_resource type="Texture2D" uid="uid://mrfx76xf3q2q" path="res://assets/projectile/projec3t.png" id="4_byeak"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v15d6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_q3m7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6q2a6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_byeak")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v15d6"]
 radius = 11.0
@@ -9,9 +28,13 @@ radius = 11.0
 [node name="projectile" type="CharacterBody2D" unique_id=1926565]
 script = ExtResource("1_q3m7n")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1022105700]
-scale = Vector2(0.315, 0.315)
-texture = ExtResource("1_c8fcr")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=908606698]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(1.275, -1.275)
+scale = Vector2(0.3575, 0.3575)
+sprite_frames = SubResource("SpriteFrames_v15d6")
+frame_progress = 0.8121262
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1495740174]
 

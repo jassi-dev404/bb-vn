@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cj6y123qhhb7o"
+path="res://.godot/imported/flower man but it's just my voice.mp3-8ea499ad96fb5cdcf174f1665395c17f.mp3str"
+
+[deps]
+
+source_file="res://assets/flower man but it's just my voice.mp3"
+dest_files=["res://.godot/imported/flower man but it's just my voice.mp3-8ea499ad96fb5cdcf174f1665395c17f.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

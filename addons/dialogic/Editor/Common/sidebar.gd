@@ -11,6 +11,7 @@ signal show_sidebar(show: bool)
 @onready var resource_tree: Tree = %ResourceTree
 
 var current_resource_list: Array = []
+var hide_all_resources := false
 
 enum GroupMode {
 	NONE,
@@ -190,6 +191,13 @@ func update_resource_list(resources_list: PackedStringArray = []) -> void:
 			resources_list.append(current_file)
 
 	resources_list = clean_resource_list(resources_list)
+	if not hide_all_resources:
+		for path in character_directory.values():
+			if not path in resources_list:
+				resources_list.append(path)
+		for path in timeline_directory.values():
+			if not path in resources_list:
+				resources_list.append(path)
 
 	%CurrentResource.text = "No Resource"
 	%CurrentResource.add_theme_color_override(
@@ -549,9 +557,11 @@ func _on_resource_list_options_id_pressed(id:int) -> void:
 			popup.toggle_item_checked(index)
 			DialogicUtil.set_editor_setting("sidebar_trim_folder_paths", popup.is_item_checked(index))
 		21: # List All
+			hide_all_resources = false
 			list_all()
 			popup.hide()
 		22: # Clear List
+			hide_all_resources = true
 			DialogicUtil.set_editor_setting("last_resources", [])
 			for editor in editors_manager.editors.values():
 				if editor.node.current_resource:
