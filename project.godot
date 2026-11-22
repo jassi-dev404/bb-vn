@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="bb_VN"
-run/main_scene="uid://dlt803rqq61r1"
+run/main_scene="uid://clmyd0bbiwmo0"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 
 [autoload]

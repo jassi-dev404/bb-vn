@@ -10,7 +10,7 @@ func _ready() -> void:
 
 func _on_dialogic_signal(argument: String) -> void:
 	if argument == "start_combat":
-		get_tree().change_scene_to_file("res://scenes/main.tscn")
+		get_tree().change_scene_to_file("res://main_menu.tscn")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
